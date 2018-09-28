@@ -11,7 +11,11 @@ ul {
 li {
     float: left;
 }
-
+h1{
+    color: #f7799f;
+    line-height: 150%;
+    font-size:50px;
+}
 li a {
     display: block;
     color: white;
