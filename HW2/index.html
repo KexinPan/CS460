@@ -65,12 +65,12 @@
 
         <div class="row">
         <div class="col-sm-4 text-center">
-            <h3>BMI:</h3>
+            <h2 id="outputTitle">BMI:</h2>
         </div>
         <div class="row">
             <h3>
                 <div id="valueOutput"></div>
-                <span class="input-group-addon">kg/m^2</span>
+                <span class="input-group-addon" id="unit">kg/m^2</span>
             </h3>
         </div>
 
@@ -79,10 +79,8 @@
     <script>
 
         function Validation() {
-                    return $("input:radio[name='sex']").is(":checked");
-                    return $("#age").val()!=="";
-                    return $("#weight").val()!=="";
-                    return $("#height").val()!=="";
+                    return $("input:radio[name='sex']").is(":checked")&& $("#age").val()!==""
+                    && $("#weight").val()!=="" && $("#height").val()!=="";
         }
         
         function BMIValue() {
