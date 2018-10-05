@@ -54,20 +54,15 @@ h1{
     font-size:40px;
 }
 
-
-h2{
+.col-sm-4{
     color: #172642;
-    line-height: 150%;
-    font-size:35px;
-    
-}
-h3{
-    color: #172642;
-    line-height: 150%;
+    line-height: 100%;
     font-size:35px;
     display: inline;
 }
-
-#outputTitle{
-    
+#valueOutput{
+    color: #261742;
+    line-height: 150%;
+    font-size:35px;
 }
+

@@ -28,6 +28,7 @@
 
     <form>
         <!--for age,height and weight, the input will be clear if the value is not positive number-->
+        
         <div>
                 <label for="gender">Gender:</label>
                 <input type="radio" name="sex" value="male" checked>Male
@@ -48,34 +49,32 @@
             onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'0')}else{this.value=this.value.replace(/\D/g,'')}"/>
             <span class="input-group-addon">cm</span>
         </div>
+
         <div>
             <label for="weight">Weight:</label>
             <input type="text" id="weight" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"	
             onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'0')}else{this.value=this.value.replace(/\D/g,'')}"/>
             <span class="input-group-addon">kg</span>
         </div>
+
         <!--once the submit button is hit, we'll call a javascript function to calculate the BMI value, create the output element, and show the result in the page-->
         <div class="button">
             <input type="submit" onclick="return BMICalculation()">
         </div>
 
     </form>
-
+    <!--the output title-->
     <div class="outvalue">
 
-        <div class="row">
-        <div class="col-sm-4 text-center">
-            <h2 id="outputTitle">BMI:</h2>
-        </div>
-        <div class="row">
-            <h3>
-                <div id="valueOutput"></div>
-                <span class="input-group-addon" id="unit">kg/m^2</span>
-            </h3>
-        </div>
+        <div class="col-sm-4">BMI:</div>
 
+        <div id="valueOutput"></div> 
     </div>
+
     <!--functions for the BMI calculation-->
+    <!--Validation is for make sure all the variables have a value-->
+    <!--BMIValue is use JQuery to get the value and calculate the BMI value-->
+    <!--BMICalculation is a function to run Validation and calculate the BMI value-->
     <script>
 
         function Validation() {
