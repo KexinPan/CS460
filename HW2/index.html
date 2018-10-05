@@ -88,13 +88,31 @@
             heightValue = $("#height").val();
             value= 10000*weightValue/(heightValue*heightValue);
             $("#valueOutput").html(value.toFixed(2));
+            if(value<=16){
+            $("#valueOutput").append("  Severe Thinness");
+            }
+            if(value>16&&value<=18.5){
+            $("#valueOutput").append("  Mild Thinness");
+            }
+            if(value>18.5&&value<=25){
+            $("#valueOutput").append("  Normal");
+            }
+            if(value>25&&value<=30){
+            $("#valueOutput").append("  Overweight");
+            }
+            if(value>30){
+            $("#valueOutput").append("  Obese");
+            }
         }
 
         function BMICalculation(){
             if(Validation()){
                 BMIValue();
             }
-            return false;
+            if(!Validation()){
+                alert("please complete all the values");
+            }
+                return false;
         }
     </script>
   </body>
