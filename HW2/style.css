@@ -1,0 +1,68 @@
+body{
+    padding-left: 6em;
+    background-color: #d3eaff;
+}
+input[type=text], select {
+    width: 45%;
+    padding:10px 10px;
+    display:inline-block;
+    border: 10px solid #d9e4f7;
+    border-radius: 40px;
+    box-sizing: border-box;
+
+}
+
+input[type=submit] {
+    width: 60%;
+    background-color: rgb(98, 156, 196);
+    color: white;
+    padding: 20px ;
+    
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=radio] {
+    display: inline-block; 
+    vertical-align: middle; 
+    width: 45px; height: 45px; 
+    border: 2px solid rgb(160, 183, 199); 
+    border-radius: 10px;
+    background: radial-gradient(rgb(182, 228, 255), rgb(93, 99, 119));
+
+}
+label{
+    color: #6a687e;
+    line-height: 150%;
+    font-size:25px;
+}
+
+
+
+input[type=submit]:hover {
+    background-color: #a8d4fd;
+}
+
+div {
+    padding: 10px;
+}
+
+h1{
+    color: #172642;
+    line-height: 150%;
+    font-size:40px;
+}
+
+.col-sm-4{
+    color: #172642;
+    line-height: 100%;
+    font-size:35px;
+    display: inline;
+}
+#valueOutput{
+    color: #261742;
+    line-height: 150%;
+    font-size:35px;
+}
+
