@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace HW3
 {
-    class QueueUnderflowException: SystemException
+    /// <summary>
+    /// A custom unchecked exception to represent situations where an illegal operation was performed on an empty queue.
+    /// </summary>
+    class QueueUnderflowException : SystemException
     {
 
         public QueueUnderflowException() : base()
