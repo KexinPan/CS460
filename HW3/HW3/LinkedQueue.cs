@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace HW3
 {
+    /// <summary>
+    /// A Singly Linked FIFO Queue.  
+    /// From Dale, Joyce and Weems "Object-Oriented Data Structures Using Java"
+    /// Modified for CS 460 HW3, Convert Java to C#
+    /// See QueueInterface.cs for documentation
+    ///</summary>
     class LinkedQueue<T>
     {
         private Node<T> front;
@@ -26,6 +32,7 @@ namespace HW3
                 throw new NullReferenceException();
             }
             if (isEmpty())
+            /// if it's an empty linkedlist, create a node and it's value is element
             {
                 Node<T> tmp = new Node<T>(element, null);
 
@@ -34,6 +41,7 @@ namespace HW3
             }
             else
             {
+                ///general case
                 Node<T> tmp = new Node<T>(element, null);
                 tmp.data = element;
                 rear.next = tmp;
@@ -60,12 +68,14 @@ namespace HW3
             {
                 throw new QueueUnderflowException("The queue was empty when pop was invoked.");
             }
+            /// one item in queue
             else if (front == rear)
             {
                 tmp = front.data;
                 front = null;
                 rear = null;
             }
+            /// General case
             else
             {
                 tmp = front.data;

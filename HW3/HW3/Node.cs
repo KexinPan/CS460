@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace HW3
 {
+    /// <summary>
+    /// Singly linked node class.
+    /// </summary>
     class Node<T>
     {
         public T data;
