@@ -76,7 +76,7 @@ namespace HW3
             if (args.Length < 1)
             {
                 Console.WriteLine("Please invoke with the max value to print binary up to, like this:");
-                Console.WriteLine("\tMain.exe 12");
+                Console.WriteLine("\tHW3.exe 12");
                 return;
             }
             try
