@@ -9,40 +9,32 @@ namespace HW4.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
-        {
-            return View();
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-
+       /// <summary>
+       /// mileconvert can convert miles to the other unit by calculation
+       /// </summary>
+       /// <returns>
+       /// double number and string to show the result
+       /// </returns>
         [HttpGet]
         public ActionResult MileConvert()
         {
+            /// output the value that get in the page in Debug 
             Debug.WriteLine(Request.QueryString["miles"]);
             Debug.WriteLine(Request.QueryString["unit"]);
 
+            /// get the value of miles in user input
             string mileValue = Request.QueryString["miles"];
-            //string unit = String.Format("{0}", Request.QueryString["unit"]);
+            
+            /// get the type of unit in user choose 
             string unit = Request.QueryString["unit"];
             double value = Convert.ToDouble(mileValue);
 
             if (mileValue != null)
             {
+                /// initialize the result message 
                 string message = "non";
 
+                /// convert the mile to othe runit by calculation
                 if (unit.Equals("millimeters"))
                 {
                     message = value + " miles is equal to " + value * 1609344 + " millimeters";
@@ -59,6 +51,8 @@ namespace HW4.Controllers
                 {
                     message = value + " miles is equal to " + value * 1.609344 + " kilometers";
                 }
+
+                /// use View bag to pass the value from Controller to View
                 ViewBag.message = message;
             }
 
