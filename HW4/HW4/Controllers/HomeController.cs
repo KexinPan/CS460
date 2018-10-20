@@ -9,6 +9,11 @@ namespace HW4.Controllers
 {
     public class HomeController : Controller
     {
+        public ActionResult Index()
+        {
+            return View();
+        }
+
         /// <summary>
         /// mileconvert can convert miles to the other unit by calculation
         /// </summary>
