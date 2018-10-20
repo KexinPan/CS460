@@ -12,6 +12,53 @@ html {
 body {
   margin: 0;
 }
+.rightarea {
+    float: left;
+    width: 60%;
+    height: 300px;
+}
+.leftarea {
+    float: left;
+    width: 40%;
+    height: 300px;
+}
+
+.input {
+    margin-bottom: 200px;
+    border: 0;
+    padding: 0;
+}
+
+.answer {
+    font-size: 20px;
+    color: chocolate;
+}
+.colorFItem {
+    float: left;
+    width: 5%;
+    height: 50px;
+}
+
+.colorPItem {
+    float: left;
+    width: 5%;
+    height: 50px;
+    font-size: 50px;
+    padding-left: 15px;
+}
+
+.colorSItem {
+    float: left;
+    width: 5%;
+    height: 50px;
+}
+
+.colorTItem {
+    float: left;
+    width: 5%;
+    height: 50px;
+}
+
 article,
 aside,
 details,
