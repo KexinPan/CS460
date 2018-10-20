@@ -12,6 +12,29 @@ html {
 body {
   margin: 0;
 }
+.rightarea {
+    float: left;
+    width: 60%;
+    height: 300px;
+}
+.leftarea {
+    float: left;
+    width: 40%;
+    height: 300px;
+}
+
+.input {
+    margin-bottom: 200px;
+    border: 0;
+    padding: 0;
+}
+
+.answer {
+    font-size: 20px;
+    color: chocolate;
+}
+
+
 article,
 aside,
 details,
