@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "ColorMixer";
+}
+
+<h2>Create a New Color</h2>
+<p>please enter colors in HTML hexadecimal format: #AABBCC</p>
+
+@using (Html.BeginForm("ColorMixerPost", "Color", FormMethod.Post))
+{
+
+    @Html.Label("First Color")
+    <br>
+    @Html.TextBox("firstColor", null, htmlAttributes: new { placeholder = "#AABBCC", pattern = "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$" })
+    <br>
+    @Html.Label("Second Color")
+    <br>
+    @Html.TextBox("secondColor", null, htmlAttributes: new { placeholder = "#12HHFF", pattern = "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$" })
+
+    <div style="padding-top:2em">
+        @Html.TextBox("mixcolor", "Mix Color", htmlAttributes: new { type = "Submit" })
+    </div>
+
+    <div style="padding-top:2em">
+        <div class="colorFItem" , style="background-color: @ViewBag.firstItem"></div>
+        <div class="colorPItem">@ViewBag.plusItem</div>
+        <div class="colorSItem" , style="background-color: @ViewBag.secondItem"></div>
+        <div class="colorPItem">@ViewBag.equalItem</div>
+        <div class="colorTItem" , style="background-color: @ViewBag.thirdItem"></div>
+    </div>
+}

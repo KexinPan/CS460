@@ -35,7 +35,7 @@ namespace HW4.Controllers
             Debug.WriteLine(Request.QueryString["unit"]);
 
             string mileValue = Request.QueryString["miles"];
-            //string unit = String.Format("{0}", Request.QueryString["unit"]);
+            
             string unit = Request.QueryString["unit"];
             double value = Convert.ToDouble(mileValue);
 
