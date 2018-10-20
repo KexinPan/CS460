@@ -16,6 +16,8 @@
             <input type="number" name="miles" step="1" min="0" style="width:300px" />
         </div>
         <div class="answer">
+
+            @* use ViewBag to output the result that calculate in the action*@
             @if (ViewBag.message != null)
             {
                 <p>@ViewBag.message</p>
