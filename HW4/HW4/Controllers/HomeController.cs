@@ -9,40 +9,35 @@ namespace HW4.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
-        {
-            return View();
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-
+        
+        /// <summary>
+        /// mile convert can change mile to the other unit
+        /// </summary>
+        /// <returns>
+        /// result is double number and show a string when click button
+        /// </returns>
         [HttpGet]
         public ActionResult MileConvert()
         {
+            /// output the result in Debug
             Debug.WriteLine(Request.QueryString["miles"]);
             Debug.WriteLine(Request.QueryString["unit"]);
 
+            /// get the input value of miles
             string mileValue = Request.QueryString["miles"];
             
+            /// get what kind of unit the user want to change
             string unit = Request.QueryString["unit"];
+
+            /// set the result as a double value
             double value = Convert.ToDouble(mileValue);
 
             if (mileValue != null)
             {
+                /// initialize the string that will be input after click button
                 string message = "non";
 
+                /// convert mile to the other unit by calculation
                 if (unit.Equals("millimeters"))
                 {
                     message = value + " miles is equal to " + value * 1609344 + " millimeters";
@@ -62,6 +57,7 @@ namespace HW4.Controllers
                 ViewBag.message = message;
             }
 
+            /// return ViewPage of this action
             return View();
         }
 
