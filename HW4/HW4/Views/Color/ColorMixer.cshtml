@@ -14,11 +14,11 @@
     @Html.Label("First Color")
     <br>
     @* the inputbox that accept the input color*@
-    @Html.TextBox("firstColor", null, htmlAttributes: new { placeholder = "#AABBCC", pattern = "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$" })
+    @Html.TextBox("firstColor", null, htmlAttributes: new { required = "required",  placeholder = "#AABBCC", pattern = "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$" })
     <br>
     @Html.Label("Second Color")
     <br>
-    @Html.TextBox("secondColor", null, htmlAttributes: new { placeholder = "#12HHFF", pattern = "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$" })
+    @Html.TextBox("secondColor", null, htmlAttributes: new { required = "required", placeholder = "#12HHFF", pattern = "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$" })
 
     @* button used to start calculation*@
     <div style="padding-top:2em">

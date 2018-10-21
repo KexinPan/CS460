@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 
 namespace HW4.Controllers
 {
@@ -59,10 +60,14 @@ namespace HW4.Controllers
                     message = value + " miles is equal to " + value * 1.609344 + " kilometers";
                 }
                 ViewBag.message = message;
+                
             }
+           
+
+            return View();
 
             /// use View bag to pass the value from Controller to View
-            return View();
+
         }
 
     }
