@@ -62,8 +62,6 @@ namespace HW4.Controllers
                 ViewBag.message = message;
                 
             }
-           
-
             return View();
 
             /// use View bag to pass the value from Controller to View
