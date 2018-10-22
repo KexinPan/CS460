@@ -33,7 +33,31 @@ body {
     font-size: 20px;
     color: chocolate;
 }
+.colorFItem {
+    float: left;
+    width: 5%;
+    height: 50px;
+}
 
+.colorPItem {
+    float: left;
+    width: 5%;
+    height: 50px;
+    font-size: 50px;
+    padding-left: 15px;
+}
+
+.colorSItem {
+    float: left;
+    width: 5%;
+    height: 50px;
+}
+
+.colorTItem {
+    float: left;
+    width: 5%;
+    height: 50px;
+}
 
 article,
 aside,

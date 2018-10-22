@@ -4,17 +4,24 @@ using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 
 namespace HW4.Controllers
 {
     public class HomeController : Controller
     {
-       /// <summary>
-       /// mileconvert can convert miles to the other unit by calculation
-       /// </summary>
-       /// <returns>
-       /// double number and string to show the result
-       /// </returns>
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// mileconvert can convert miles to the other unit by calculation
+        /// </summary>
+        /// <returns>
+        /// double number and string to show the result
+        /// </returns>
+
         [HttpGet]
         public ActionResult MileConvert()
         {
@@ -24,17 +31,18 @@ namespace HW4.Controllers
 
             /// get the value of miles in user input
             string mileValue = Request.QueryString["miles"];
-            
-            /// get the type of unit in user choose 
+
+            /// get the type of unit that usee choose
             string unit = Request.QueryString["unit"];
+            /// set the result as a double value
             double value = Convert.ToDouble(mileValue);
 
             if (mileValue != null)
             {
-                /// initialize the result message 
+                /// initialize the string that will be input after click button
                 string message = "non";
 
-                /// convert the mile to othe runit by calculation
+                /// convert mile to the other unit by calculation
                 if (unit.Equals("millimeters"))
                 {
                     message = value + " miles is equal to " + value * 1609344 + " millimeters";
@@ -51,12 +59,13 @@ namespace HW4.Controllers
                 {
                     message = value + " miles is equal to " + value * 1.609344 + " kilometers";
                 }
-
-                /// use View bag to pass the value from Controller to View
                 ViewBag.message = message;
+                
             }
-
             return View();
+
+            /// use View bag to pass the value from Controller to View
+
         }
 
     }

@@ -1,0 +1,37 @@
+﻿
+@* the title of the page is ColoeMixer*@
+@{
+    ViewBag.Title = "ColorMixer";
+}
+
+<h2>Create a New Color</h2>
+<p>please enter colors in HTML hexadecimal format: #AABBCC</p>
+
+@* use BeginForm to crete a form to input color and calculate*@
+@using (Html.BeginForm("ColorMixerPost", "Color", FormMethod.Post))
+{
+    @* the label of the color code input*@
+    @Html.Label("First Color")
+    <br>
+    @* the inputbox that accept the input color*@
+    @Html.TextBox("firstColor", null, htmlAttributes: new { required = "required",  placeholder = "#AABBCC", pattern = "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$" })
+    <br>
+    @Html.Label("Second Color")
+    <br>
+    @Html.TextBox("secondColor", null, htmlAttributes: new { required = "required", placeholder = "#12HHFF", pattern = "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$" })
+
+    @* button used to start calculation*@
+    <div style="padding-top:2em">
+        @Html.TextBox("mixcolor", "Mix Color", htmlAttributes: new { type = "Submit" })
+    </div>
+
+    @*use ViewBag to show the result that passed from Controller*@
+
+    <div style="padding-top:2em">
+        <div class="colorFItem" , style="background-color: @ViewBag.firstItem"></div>
+        <div class="colorPItem">@ViewBag.plusItem</div>
+        <div class="colorSItem" , style="background-color: @ViewBag.secondItem"></div>
+        <div class="colorPItem">@ViewBag.equalItem</div>
+        <div class="colorTItem" , style="background-color: @ViewBag.thirdItem"></div>
+    </div>
+}
