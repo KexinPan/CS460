@@ -22,7 +22,7 @@ namespace HW4.Controllers
         /// </returns>
         
         [HttpGet]
-        public ActionResult ColorMixer(string FirstColor, string SecondColor)
+        public ActionResult ColorMixer()
         {
             return View();
         }
@@ -36,7 +36,7 @@ namespace HW4.Controllers
         /// return color block in page and use viewbag to pass the value
         /// </returns>
         [HttpPost]
-        public ActionResult ColorMixerPost(string FirstColor, string SecondColor)
+        public ActionResult ColorMixer(string FirstColor, string SecondColor)
         {
             /// output the value that get in the page in Debug 
             Debug.WriteLine(FirstColor);
@@ -67,7 +67,7 @@ namespace HW4.Controllers
             ViewBag.equalItem = "=";
             ViewBag.thirdItem = ThirdColor;
 
-            return View("ColorMixer");
+            return View();
 
         }
     }
