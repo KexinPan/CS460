@@ -15,14 +15,14 @@ namespace HW4.Controllers
         /// <summary>
         /// get the page format first by get method
         /// </summary>
-        /// <param name="firstColor"></param>
-        /// <param name="secondColor"></param>
+        /// <param name="FirstColor"></param>
+        /// <param name="SecondColor"></param>
         /// <returns>
         /// retunr the view page
         /// </returns>
         
         [HttpGet]
-        public ActionResult ColorMixer(string firstColor, string secondColor)
+        public ActionResult ColorMixer(string FirstColor, string SecondColor)
         {
             return View();
         }
@@ -30,42 +30,42 @@ namespace HW4.Controllers
         /// <summary>
         /// use post method to do some calculations and give a response to users
         /// </summary>
-        /// <param name="firstColor"></param>
-        /// <param name="secondColor"></param>
+        /// <param name="FirstColor"></param>
+        /// <param name="SecondColor"></param>
         /// <returns>
         /// return color block in page and use viewbag to pass the value
         /// </returns>
         [HttpPost]
-        public ActionResult ColorMixerPost(string firstColor, string secondColor)
+        public ActionResult ColorMixerPost(string FirstColor, string SecondColor)
         {
             /// output the value that get in the page in Debug 
-            Debug.WriteLine(firstColor);
-            Debug.WriteLine(secondColor);
+            Debug.WriteLine(FirstColor);
+            Debug.WriteLine(SecondColor);
 
             /// change the color string value into color RGB value 
-            Color _firstColor = ColorTranslator.FromHtml(firstColor);
-            Color _secondColor = ColorTranslator.FromHtml(secondColor);
+            Color _firstColor = ColorTranslator.FromHtml(FirstColor);
+            Color _secondColor = ColorTranslator.FromHtml(SecondColor);
 
             /// some calculation about mix color
-            int thirdColorR = _firstColor.R + _secondColor.R;
-            if (thirdColorR > 255) { thirdColorR = 255; }
-            int thirdColorG = _firstColor.G + _secondColor.G;
-            if (thirdColorG > 255) { thirdColorG = 212; }
-            int thirdColorB = _firstColor.B + _secondColor.B;
-            if (thirdColorB > 255) { thirdColorB = 255; }
+            int ThirdColorR = _firstColor.R + _secondColor.R;
+            if (ThirdColorR > 255) { ThirdColorR = 255; }
+            int ThirdColorG = _firstColor.G + _secondColor.G;
+            if (ThirdColorG > 255) { ThirdColorG = 212; }
+            int ThirdColorB = _firstColor.B + _secondColor.B;
+            if (ThirdColorB > 255) { ThirdColorB = 255; }
 
             /// set a color value to accept the mix result
-            Color _thirdColor = Color.FromArgb(thirdColorR, thirdColorG, thirdColorB);
+            Color _thirdColor = Color.FromArgb(ThirdColorR, ThirdColorG, ThirdColorB);
 
             /// change the color type to string so it can output in page as a color block instead of color value
-            string thirdColor = "#" + _thirdColor.R.ToString("X2") + _thirdColor.G.ToString("X2") + _thirdColor.B.ToString("X2");
+            string ThirdColor = "#" + _thirdColor.R.ToString("X2") + _thirdColor.G.ToString("X2") + _thirdColor.B.ToString("X2");
 
             /// use ViewBag to convert values
-            ViewBag.firstItem = firstColor;
-            ViewBag.secondItem = secondColor;
+            ViewBag.firstItem = FirstColor;
+            ViewBag.secondItem = SecondColor;
             ViewBag.plusItem = "+";
             ViewBag.equalItem = "=";
-            ViewBag.thirdItem = thirdColor;
+            ViewBag.thirdItem = ThirdColor;
 
             return View("ColorMixer");
 
