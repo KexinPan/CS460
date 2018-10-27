@@ -26,7 +26,7 @@ namespace HW5.Models
         public string ApartmentName { get; set; }
 
         [Display(Name = "Unit Number:"), Required]
-        [RegularExpression("^[0-9]{10}$", ErrorMessage = "Please Input An Integer")]
+        [RegularExpression("^[0-9]{1,10}$", ErrorMessage = "Please Input An Integer")]
         public int UnitNumber { get; set; }
 
         [Required]
