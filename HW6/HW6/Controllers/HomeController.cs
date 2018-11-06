@@ -17,7 +17,8 @@ namespace HW6.Controllers
         public ActionResult Search(String namePart)
         {
             namePart = Request.QueryString["search"];
-            if (namePart == null || namePart == "")
+
+            if (namePart == null)
             {
                 ViewBag.message = false;
                 return View();
@@ -25,7 +26,8 @@ namespace HW6.Controllers
             else
             {
                 ViewBag.message = true;
-                return View(database.People.Where(p => p.FullName.Contains(namePart)).ToList());
+                var peopleMatch = database.People.Where(p => p.FullName.Contains(namePart));
+                return View(peopleMatch.ToList());
             }
         }
 
@@ -33,7 +35,6 @@ namespace HW6.Controllers
         {
             ViewModel vm = new ViewModel();
             vm.Person = database.People.Find(id);
-
             if (vm.Person.Customers2.Count() > 0)
             {
                 ViewBag.customer2 = true;
