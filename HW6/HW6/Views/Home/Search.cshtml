@@ -1,0 +1,39 @@
+﻿@model IEnumerable<HW6.Models.Person>
+
+@{
+    ViewBag.Title = "Client Search";
+}
+
+<img src="~/Content/Image/strip.jpg" class="img-responsive" alt="Responsive image">
+
+<h2>Client Search</h2>
+@using (Html.BeginForm("Search", "Home", FormMethod.Get, new { @class = "form-inline"}))
+{
+    <div class="center-block">
+            @Html.TextBox("search", "", new { @class = "form-control", @placeholder = "Search by client name", required = "required", @style= "width:600px" })
+            <button type="submit" class="btn btn-default" style="background-color:#ffe6f7;">Search</button>     
+    </div>
+}
+
+@if (ViewBag.message)
+{
+    if (Model.Count() == 0)
+    {
+        <h4>I'm sorry, your search returns no results.</h4>
+    }
+    else
+    {
+        <br/>
+        <div>
+            <h4>Names matching your search:</h4>
+        </div>
+        foreach (var person in Model)
+        {
+        <div>
+            <a href="Information/@person.PersonID" class="btn btn-primary btn-lg active" role="button" style="background-color:#ffccef; width:500px">@person.FullName</a>
+        </div>
+        }
+    }
+}
+
+

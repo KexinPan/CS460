@@ -1,0 +1,129 @@
+﻿@model HW6.Models.VM.ViewModel
+
+@{
+    ViewBag.Title = "Information";
+}
+
+<h2>Information</h2>
+
+<div class="row">
+    <div class="col-md-7" style="background:#ffcccc;width:500px;height:200px">
+        <h4>@Html.DisplayFor(modelItem => modelItem.Person.FullName)</h4>
+        <hr />
+        <table>
+            <tr>
+                <td class="col-md-2">@Html.Label("Preferred Name:")</td>
+                <td class="col-md-2">@Html.DisplayFor(modelItem => modelItem.Person.PreferredName)</td>
+            </tr>
+            <tr>
+                <td class="col-md-2">@Html.Label("Phone Number:")</td>
+                <td class="col-md-2">@Html.DisplayFor(modelItem => modelItem.Person.PhoneNumber)</td>
+            </tr>
+            <tr>
+                <td class="col-md-2">@Html.Label("Fax Number:")</td>
+                <td class="col-md-2">@Html.DisplayFor(modelItem => modelItem.Person.FaxNumber)</td>
+            </tr>
+            <tr>
+                <td class="col-md-2">@Html.Label("Email Address:")</td>
+                <td class="col-md-2">
+                    <a href="mailto:@(Model.Person.EmailAddress)">@Html.DisplayFor(modelItem => modelItem.Person.EmailAddress)</a>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-2">@Html.Label("Member Since: ")</td>
+                <td class="col-md-2">@Html.DisplayFor(modelItem => modelItem.Person.ValidFrom)</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="col-md-3">
+        <img src="https://via.placeholder.com/150x200" alt="@Model.Person.Photo" />
+    </div>
+</div>
+
+<br />
+
+@if (ViewBag.customer2)
+{
+<div class="row">
+    <div class="col-md-7" style="background:#ffcccc;width:500px;height:200px;margin-top:10px">
+        <h4>Company Profile</h4>
+        <hr />
+        <table>
+            <tr>
+                <td class="col-md-2">@Html.Label("Company:")</td>
+                <td class="col-md-2">@Html.DisplayFor(modelItem => modelItem.Customer.CustomerName)</td>
+            </tr>
+            <tr>
+                <td class="col-md-2">@Html.Label("Phone Number:")</td>
+                <td class="col-md-2">@Html.DisplayFor(modelItem => modelItem.Customer.PhoneNumber)</td>
+            </tr>
+            <tr>
+                <td class="col-md-2">@Html.Label("Fax Number:")</td>
+                <td class="col-md-2">@Html.DisplayFor(modelItem => modelItem.Customer.FaxNumber)</td>
+            </tr>
+            <tr>
+                <td class="col-md-2">@Html.Label("Web Site:")</td>
+                <td class="col-md-2">
+                    <a href="mailto:@(Model.Customer.WebsiteURL)">@Html.DisplayFor(modelItem => modelItem.Customer.WebsiteURL)</a>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-2">@Html.Label("Member Since: ")</td>
+                <td class="col-md-2">@Html.DisplayFor(modelItem => modelItem.Customer.ValidFrom)</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-7" style="background:#ffcccc;width:500px;height:150px;margin-top:20px">
+        <h4>Purchase History Summary</h4>
+        <hr />
+        <table>
+            <tr>
+                <td class="col-md-2">@Html.Label("Orders:")</td>
+                <td class="col-md-2">@Html.DisplayFor(modelItem => modelItem.Customer.Orders.Count)</td>
+            </tr>
+            <tr>
+                <td class="col-md-2">@Html.Label("Gross Sales:")</td>
+                <td class="col-md-2">$@ViewBag.grosssales</td>
+            </tr>
+            <tr>
+                <td class="col-md-2">@Html.Label("Gross Profits:")</td>
+                <td class="col-md-2">$@ViewBag.grossprofit</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-7" style="background:#ffcccc;width:500px;height:auto;margin-top:20px">
+        <h4>Item Purchased <span style="color:#662000;font-size:12px">(10 Highest by Profit)</span></h4>
+        <hr />
+        <table>
+            <tr>
+                <th>@Html.Label("StackItemID")</th>
+                <th>@Html.Label("Description")</th>
+                <th>@Html.Label("LineProfit")</th>
+                <th>@Html.Label("SalesPerson")</th>
+            </tr>
+            @foreach (var item in Model.InvoiceLine)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(m=>item.StockItemID)</td>
+                    <td>@Html.DisplayFor(m => item.Description)</td>
+                    <td>$@Html.DisplayFor(m => item.LineProfit)</td>
+                    <td>@Html.DisplayFor(m => item.Invoice.Person.FullName)</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
+}
+
+
+
+
+
