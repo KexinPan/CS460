@@ -99,6 +99,7 @@
     <Content Include="App_Data\Requests_log.ldf">
       <DependentUpon>Requests.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data\select.sql" />
     <Content Include="App_Data\up.sql" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />

@@ -21,7 +21,6 @@ $("#InputBox").bind("keypress", function (e) {
             ajaxFuc(data);
         }
     }
-
 });
 
 // if not boring word, translate it through apiFunc
