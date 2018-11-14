@@ -28,7 +28,7 @@ namespace HW3
     class Program
     {
         
-        static LinkedList<string> generateBinaryRepresentationList(int n)
+        static LinkedList<string> GenerateBinaryRepresentationList(int n)
         {
             ///<value> 
             ///Create an empty queue of strings with which to perform the traversal
@@ -46,23 +46,23 @@ namespace HW3
                 return output;
             }
             /// Enqueue the first binary number.  Use a dynamic string to avoid string concat
-            q.push(new StringBuilder("1"));
+            q.Push(new StringBuilder("1"));
 
             /// BFS 
             while (n-- > 0)
             {
                 /// print the front of queue 
-                StringBuilder sb = q.pop();
+                StringBuilder sb = q.Pop();
                 output.AddLast(sb.ToString());
 
                 /// Make a copy
                 StringBuilder sbc = new StringBuilder(sb.ToString());
                 /// Left child
                 sb.Append('0');
-                q.push(sb);
+                q.Push(sb);
                 /// Right child
                 sbc.Append('1');
-                q.push(sbc);
+                q.Push(sbc);
             }
             return output;
 
@@ -88,7 +88,7 @@ namespace HW3
                 Console.WriteLine("I'm sorry, I can't understand the number: " + args[0]);
                 return;
             }
-            LinkedList<String> output = generateBinaryRepresentationList(n);
+            LinkedList<String> output = GenerateBinaryRepresentationList(n);
             ///<summary>
             ///Print it right justified.  Longest string is the last one.
             ///Print enough spaces to move it over the correct distance

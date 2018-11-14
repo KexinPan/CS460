@@ -11,14 +11,23 @@ namespace HW3
     /// </summary>
     class Node<T>
     {
-        public T data;
-        public Node<T> next;
-
-        public Node(T data, Node<T> next)
+        private T data;
+        public T Data
         {
-            this.data = data;
-            this.next = next;
+            get { return data; }
+            set { data = value; }
+        }
+        private Node<T> next;
+        public Node<T> Next
+        {
+            get { return next; }
+            set { next = value; }
+        }
 
+        public Node(T Data, Node<T> Next)
+        {
+            this.data = Data;
+            this.next = Next;
         }
     }
 }

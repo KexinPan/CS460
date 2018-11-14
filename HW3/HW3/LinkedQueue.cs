@@ -12,7 +12,7 @@ namespace HW3
     /// Modified for CS 460 HW3, Convert Java to C#
     /// See QueueInterface.cs for documentation
     ///</summary>
-    class LinkedQueue<T>
+    class LinkedQueue<T>: IQueueInterface<T>
     {
         private Node<T> front;
         private Node<T> rear;
@@ -25,13 +25,13 @@ namespace HW3
         }
 
 
-        public T push(T element)
+        public T Push(T element)
         {
             if (element == null)
             {
                 throw new NullReferenceException();
             }
-            if (isEmpty())
+            if (IsEmpty())
             /// if it's an empty linkedlist, create a node and it's value is element
             {
                 Node<T> tmp = new Node<T>(element, null);
@@ -43,14 +43,13 @@ namespace HW3
             {
                 ///general case
                 Node<T> tmp = new Node<T>(element, null);
-                tmp.data = element;
-                rear.next = tmp;
+                rear.Next = tmp;
                 rear = tmp;
 
             }
             return element;
         }
-        public Boolean isEmpty()
+        public Boolean IsEmpty()
         {
 
             if (front == null & rear == null)
@@ -61,25 +60,25 @@ namespace HW3
                 return false;
 
         }
-        public T pop()
+        public T Pop()
         {
             T tmp;
-            if (isEmpty())
+            if (IsEmpty())
             {
                 throw new QueueUnderflowException("The queue was empty when pop was invoked.");
             }
             /// one item in queue
             else if (front == rear)
             {
-                tmp = front.data;
+                tmp = front.Data;
                 front = null;
                 rear = null;
             }
             /// General case
             else
             {
-                tmp = front.data;
-                front = front.next;
+                tmp = front.Data;
+                front = front.Next;
             }
             return tmp;
         }

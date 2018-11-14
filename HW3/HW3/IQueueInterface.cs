@@ -17,7 +17,7 @@ namespace HW3
         /// <returns>
         /// the element that was enqueued.
         /// </returns>
-        T push(T element);
+        T Push(T element);
 
         ///<summary>
         ///Remove and return the front element.
@@ -25,7 +25,7 @@ namespace HW3
         /// <exception cref="QueueUnderflowException">
         /// Thrown if the queue is empty.
         /// </exception>
-        T pop();
+        T Pop();
 
         /// <summary>
         ///Test if the queue is empty
@@ -33,7 +33,7 @@ namespace HW3
         /// <return>
         /// return true if the queue is empty; otherwise false
         ///</return>
-        Boolean isEmpty();
+        Boolean IsEmpty();
 
     }
 }
