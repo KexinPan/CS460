@@ -1,0 +1,52 @@
+﻿@model IEnumerable<HW8Two.Models.Bid>
+    @{
+        ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h2>Reginald's Ancient Antiquities Auction House</h2>
+    <p class="lead">Welcome!</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Bid on an Item!</h2>
+        <p>Create Bid Here</p>
+        <p><a class="btn btn-default" href="/Bids/Create">Start &raquo;</a></p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Recently Bids</h2>
+        <table cellpadding="100">
+            <tr>
+                <th>@Html.DisplayName("Item ID: ")</th>
+                <th>@Html.DisplayName("Item Name:")</th>
+                <th> @Html.DisplayName("Buyer Name:")</th>
+                <th>@Html.DisplayName("Price:")</th>
+                <th>@Html.DisplayName("Date:")</th>
+               
+            </tr>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.ItemID</td>
+                <td><a href="/Items/Details/@item.ItemID" />@item.Item.ItemName</td>
+                <td>@item.BuyerName</td>
+                <td>$@item.Price</td>
+                <td>
+                @if (item.DateValue.Date == DateTime.Today)
+                {
+                    // change the format so it only show the time
+                    @item.DateValue.ToString("h:mm:ss tt")
+                }
+                else
+                {
+                   @item.DateValue
+                }
+                </td>
+                </tr>
+            }
+        </table>
+
+    </div>
+</div>

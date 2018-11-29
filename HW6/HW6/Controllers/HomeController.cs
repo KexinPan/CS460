@@ -40,6 +40,7 @@ namespace HW6.Controllers
                 ViewBag.customer2 = true;
                 int customerID = vm.Person.Customers2.First().CustomerID;
                 vm.Customer = database.Customers.Find(customerID);
+
                 ViewBag.grosssales = vm.Customer.Orders.SelectMany(i => i.Invoices).SelectMany(i => i.InvoiceLines).Sum(i => i.ExtendedPrice);
                 ViewBag.grossprofit = vm.Customer.Orders.SelectMany(i => i.Invoices).SelectMany(i => i.InvoiceLines).Sum(i => i.LineProfit);
                 vm.InvoiceLine = vm.Customer.Orders.SelectMany(i => i.Invoices).SelectMany(i => i.InvoiceLines).OrderByDescending(i => i.LineProfit).Take(10).ToList();
