@@ -21,7 +21,7 @@ namespace HW8Two.Models
         public string ItemName { get; set; }
 
         [Required]
-        [StringLength(64)]
+        [StringLength(225)]
         public string Description { get; set; }
 
         [Required]

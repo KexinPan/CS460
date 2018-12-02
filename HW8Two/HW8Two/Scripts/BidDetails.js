@@ -1,5 +1,7 @@
 ﻿//get the id from the url: window.location.href....
-var id = window.location.href.split("/").slice(-1)[0];
+//var id = window.location.href.split("/").slice(-1)[0];
+var idIndex = window.location.href.lastIndexOf("/") + 1;
+var id = window.location.href.slice(idIndex, idIndex + 4);
 $(document).ready(function () {
 
     var source = "/Bids/Details/" + id;

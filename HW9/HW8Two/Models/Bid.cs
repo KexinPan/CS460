@@ -18,7 +18,7 @@ namespace HW8Two.Models
 
         [Required]
         [StringLength(2000)]
-        [RegularExpression(@"^\d+&")]
+        [RegularExpression(@"^\d+$", ErrorMessage = "Please Input Legal Price")]
         public string Price { get; set; }
 
         public DateTime DateValue { get; set; } = DateTime.Now;

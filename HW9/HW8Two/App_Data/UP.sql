@@ -63,7 +63,7 @@ handwritten, love poem by Bob Dylan','Lyle Banks')
 GO 
 
 INSERT INTO [dbo].[Bids] (ItemID,BuyerName,Price,DateValue) VALUES
-	(1001,'Otto Vanderwall','$250,000','12/04/2017 09:04:22'),
-	(1003,'Jane Stone','$95,000','12/04/2017 08:44:03')
+	(1001,'Otto Vanderwall','250,000','12/04/2017 09:04:22'),
+	(1003,'Jane Stone','95,000','12/04/2017 08:44:03')
 	
 GO 
